@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome {{logged_User.first_name|title}} {{logged_User.last_name|title}}</title>
+</head>
+<body>
+	<div id="menu">
+		<label for="menu" class="menu"></label>
+			<a href="/home">Link 1</a>
+		    <a href="/messageboard/{{logged_User.id}}">Link 2</a>
+		    <a href="#">Link 3</a>
+	</div>	    
+<div id="header">
+		<h2>WeHike</h2>
+		<h2>Welcome @{{logged_User.username}}</h2>
+	</div>
+	<h1> WeHike - Start the Conversation</h1>
+	<div id="container">
+		<div id="post_message">
+		<form action='/post_message/{{logged_User.id}}' method="POST">
+			<label for="messages" class="post">Post a Message:</label><br>
+			<textarea name="message" cols="100" rows="5"></textarea><br>
+			<input type="submit" id="mess_button" value="Post a Message">
+		</form>
+		</div>
+		<div id="message">
+			{% for one_message in all_messages %}
+			<p><h4>{{one_message.user.first_name}} {{one_message.user.last_name}} {{one_message.created_at}}</h4>
+					</p>{{one_message.message}}<br>
+				<a href="{% url 'delete_message' message_id=one_message.id %}">
+				<input type="submit" id="delete_button" name="delete" value="Delete Message"><br></a>
+		</div>
+		<div id="comments">
+				{% for one_comment in one_message.message_comment.all %}
+					<p>{{one_comment.user.first_name}} {{one_comment.user.last_name}} {{one_comment.created_at}}</p>
+					<p>{{one_comment.comment}}</p>
+					
+				{% endfor %}
+			</div>
+			<div id="post_comment">
+			<form action="/post_comment/{{logged_User.id}}"	method="POST">
+					{% csrf_token %}
+				<label for="comment"class="post">Post a Comment:</label><br>
+				<textarea name="comment" cols="80" rows="3"></textarea><br>
+				<input type="hidden" value="{{one_message.id}}" name="message">
+				<input type="submit" id='comment_button' name="input_comment" value="Post a Comment">
+			</form>
+			</div>
+			{% endfor %}					
+			
+
+	</div>	
+
+</body>
+</html>

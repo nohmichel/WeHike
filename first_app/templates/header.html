@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Welcome to WeHike</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/header.css' %}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="{% static 'javascript/hamburger.js' %}"></script>
+		</head>
+	<body>
+		<div id="dropdown">
+			<img src="{% static '/images/menu.png' %}" onclick="myFunction()" class="dropbtn" height="60px;">
+			<div id="myDropdown" class="dropdown-content">
+				<a href="/home">HOME</a>
+				<a href="/messageboard">MESSAGEBOARD</a>
+				<a href="/quiz">TAKE THE QUIZ</a>	
+			   	<a href="/trail_family">FIND A TRAIL FAMILY</a>
+			   	{% if request.session.User %}
+			   	<a href="/user_profile/{{logged_User.id}}">VIEW PROFILE</a>
+			   	<a href="/logout">LOGOUT</a>
+			   		{% else %}
+			   	<a href="/register">LOGIN/REGISTER</a>	
+			   		{% endif %}
+			</div> 	
+		 </div>
+	<div id="top">
+		<a href="/home">
+		<p id="wehike">WeHike</p></a>
+		{% if request.session.User %}
+		<p id="welcome">Welcome Back {{logged_User.first_name|title}} {{logged_User.last_name|title}}</p>
+			{% else %}
+		<h2>Welcome to WeHike</h2>
+			{% endif %}
+	</div>
+	
+
+
+

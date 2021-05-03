@@ -1,0 +1,63 @@
+body{
+	margin: 0px;
+	background-color: #FDF5E6;
+	background-image: url('images/trail.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 600px;
+}
+
+@font-face{
+	font-family: "Cooper Black";
+	src: url('/fonts/CP.ttf');
+}	
+#bio{
+	border: 4px solid black;
+	padding: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 100px;
+	width: 1000px;
+	background-color: white;
+	border-radius: 5%;
+
+}
+
+.bio_details{
+	display: inline-block;
+	vertical-align: top;
+}
+
+img {
+	border-radius: 50%;
+	border:4px solid black;
+}
+
+input {
+	float: right;
+	margin-left: 30px;
+	width: 200px;
+	height: 20px;
+	font-size: 18px;
+}
+
+#bio_update{
+	margin-top: 70px;
+	margin-left: 40px;
+	font-size: 23px;
+	font-family: "Cooper Black";
+
+}
+
+#photo{
+	font-family: "Cooper Black";
+	font-size: 23px;
+}
+
+#name{	
+	font-family: "Cooper Black";
+	font-size: 30px;	
+}
+
+.button{
+	height: 25px;
+}

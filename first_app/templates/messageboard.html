@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Welcome {{logged_User.first_name| title}} {{logged_User.last_name}}</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/messageboard.css' %}">
+	</head>
+	{% block header %}
+		{% include "header.html" %}
+		{% endblock %}
+	<div id="post_message">
+		<h1> WeHike Disccusion Board</h1>
+		<form action="/post_message" method="POST">
+				{% csrf_token %}
+			<label for="messages" id="title" class="post">Post a new Message:</label><br>
+			<textarea name="message" id="new_message" cols="130" rows="5"></textarea><br>
+			<input type="submit" id="mess_button" value="Post Message">
+		</form>
+	</div>
+	<div id="top_half"></div>
+	<div id="container">	
+		<div id="message_div">
+			<div id="user_img">
+				<img src="{{user_bio.profile_pic.url}}" style="width: 100px;height: 100px;">
+			<div id="messages">
+				{% for one_message in all_messages %}
+				{{one_message.message}}<br>
+				<p class="user_name">Posted By: {{one_message.user.first_name|title}} {{one_message.user.last_name|title}} - {{one_message.created_at}}	
+				<a href="{% url 'delete_message' message_id=one_message.id %}">Delete Message</a>
+			</div>	
+			<div id="comments">
+				{% for one_comment in one_message.message_comment.all %}
+					<p> Posted By: {{one_comment.user.first_name}} {{one_comment.user.last_name}} {{one_comment.created_at}}</p>
+					<p>{{one_comment.comment}}</p>
+				{% endfor %}
+			</div>
+		
+			<div id="post_comment">
+			<form action="/post_comment/{{logged_User.id}}"	method="POST">
+					{% csrf_token %}
+				<label for="comment"class="post">Post a Comment:</label><br>
+				<textarea name="comment" cols="100" rows="3"></textarea><br>
+				<input type="hidden" value="{{one_message.id}}" name="message">
+				<input type="submit" id='comment_button' name="input_comment" value="Post a Comment">
+			</form>
+			</div>
+		</div>	
+		</div>
+			{% endfor %}
+	</body>
+</html>
+
+<!-- <input type="submit" id="delete_button" name="delete" value="Delete Message"><br> -->

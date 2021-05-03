@@ -1,0 +1,85 @@
+body{
+	margin: 0px;
+	background-color: #FDF5E6;
+	background-image: url('images/landscape4.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 700px;
+}
+
+@font-face{
+	font-family: "Cooper Black";
+	src: url('/fonts/CP.ttf');
+}
+
+#container{
+	margin-top: 150px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+	background-color: white;
+	border-radius: 5%;
+}
+
+
+#head {
+	font-family: "Cooper Black";	
+	text-align: center;
+}
+
+#subhead{
+	font-size: 25px;
+}
+
+#trailfam{
+	border-bottom: 8px solid black;
+  	border-radius: 5px;
+  	padding: 20px;	
+}
+
+.group_name{
+	width: 350px;
+	font-size: 25px;
+	margin-left: 25px;
+	margin-bottom: 25px;
+}
+
+.title{
+	font-weight: bold;
+	margin-bottom: none;
+}
+
+input{
+	width: 100px;
+	font-size: 25px;
+	background-color: #CD853F;
+	border-radius: 5%;
+	margin: 3px 1px;
+	font-weight: bold;
+
+}
+
+#state{
+	width: 200px;
+	font-size: 20px;
+}
+
+#button{
+	margin-left: 150px;
+	margin-bottom: 25px;
+	font-size: 23px;
+
+}
+
+img {
+	border-radius: 50%;
+	border: 5px solid black;
+	
+
+}
+
+/*#hikers{
+	position: static;
+	border-radius: 50%;
+	transform: translate(900px, -480px);
+}*/

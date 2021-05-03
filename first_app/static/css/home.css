@@ -1,0 +1,96 @@
+body{
+	margin: 0px;
+	background-color: #FDF5E6;
+}
+
+#options_menu{
+	width:100%; 
+	padding-left: 50px;
+	margin-right: auto;
+}
+
+#container{
+	margin-top: 150px;
+	height: 300px;
+	width: 100%;
+	padding-left: 30px;
+	
+}
+#top{
+	width: 100%;
+	height: 450px;
+	position: relative;
+	text-align: center;
+	margin-bottom: 0px;
+	background-color: olive;
+
+}	
+.centered {
+	position: absolute;
+  	color: white;
+  	font-family: "Cooper Black";
+  	text-shadow: 2px 2px 4px black;
+  	margin-right: 5px;
+  	margin-left: 20px;
+ }
+
+#title{
+	top: 85%;
+  	left: 50%;
+	transform: translate(-50%, -50%);  
+  	font-size: 120px;
+  	}
+#desc{
+	top: 106%;
+  	left: 50%;
+	font-size: 20px;
+	transform: translate(-50%, -50%);
+}
+p{
+	margin-top: 0px;
+}
+
+.category {
+	display: inline-block;
+	padding-left: 30px;
+}
+
+.category img{
+	border-radius: 50%;
+	shape-outside:circle();
+}
+
+.menu{
+	font-size: 30px;
+	font-family: "Cooper Black";
+	color: black;
+
+}
+
+@font-face{
+	font-family: "Cooper Black";
+	src: url('/fonts/CP.ttf');
+}
+
+#register {
+	text-decoration: none;
+	top: 106%;
+  	left: 100%;
+	transform: translate(20%);
+	color:black;
+	
+}
+
+a {
+	text-decoration: none;
+}
+
+path {
+  fill: transparent;
+}
+
+text {
+  fill: black;
+  font-family: "Cooper Black";
+}
+

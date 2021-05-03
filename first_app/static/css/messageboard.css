@@ -1,0 +1,84 @@
+body{
+	margin: 0px;
+	background-color: #FDF5E6;
+	background-repeat: no-repeat;
+	background-size: 100% 600px;
+}
+
+@font-face{
+	font-family: "Cooper Black";
+	src: url('/fonts/CP.ttf');
+}
+
+h1{
+	font-family: "Cooper Black";
+	color: white;
+	text-align: center;
+	text-shadow: 2px 2px 4px black;
+
+}
+
+#container{
+	width: 1050px;
+	background-color: olive;
+	border-radius: 5%;
+	padding: 25px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 75px;
+	border: 4px solid black;
+
+}
+
+#post_message{
+	background-image: url('images/blooms.jpg');
+	font-family: "Cooper Black";
+	color: white;
+	text-shadow: 2px 2px 4px black;
+	font-size: 25px;
+	width: 1050px;
+	height: 300px;
+	background-color: white;
+	border-radius: 5%;
+	padding: 25px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 100px;
+	border: 4px solid black;
+}
+
+#mess_button{
+	float: right;
+	margin: 10px 30px 20px;
+	width: 150px;
+	font-size: 20px;
+	background-color: white;
+	font-weight: bold;
+
+}
+
+#new_message{
+	border-radius: 15px;
+	background-color: #DCDCDC;
+	padding: 15px;
+	font-size: 15px;
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
+
+}
+
+#message_div{
+
+	border: 1px solid black;
+	padding: 20px;
+	margin: 15px;
+}
+
+#messages{
+	border: 1px solid black;
+	padding: 15px 15px 5px 15px;
+}
+
+.user_name{
+	margin-top: 15px;
+	margin-bottom: 3px;
+}

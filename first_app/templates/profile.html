@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome {{logged_User.first_name | title}} {{logged_User.last_name |title}}</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+{% block header %}
+	{% include "header.html" %}
+	{% endblock %}
+	<div id=bio>
+		<p id="name">{{logged_User.first_name|title}} {{logged_User.last_name|title}}'s Profile</p>
+		<div id="photo" class="bio_details">
+			<form action="/update_photo/{{logged_User.id}}" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				<img src="{{user_bio.profile_pic.url}}" style="width: 300px;height: 300px;"><br>
+				<p>Profile pic: <input type="file" value="{{user_bio.profile_pic}}" name="profile_pic"><br></p>
+				<input type="submit" id="button" class="button" value="Update" name="reg_button"><br>
+			</form>	
+		</div>
+		<div id="bio_update" class="bio_details">
+			<form action="/update_bio/{{logged_User.id}}" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				<label for='location'>Location:</label>
+				<input name="location" type="text" value="{{user_bio.location}}"><br>
+				<label for='fav_hike'>Favorite Hike:</label>
+				<input name="fav_hike" type="text" value="{{user_bio.fav_hike}}"><br>
+				<label for='bucket_list'>Bucket List Adventure:</label>
+				<input name="bucket_list" type="text" value="{{user_bio.bucket_list}}"><br>
+				<label for='snack'>Go-To Trail Snack:</label> 
+				<input name="snack" type="text" value="{{user_bio.snack}}"><br>
+				<label for='hike_need'>Cannot Hike Without:</label> 
+				<input name='hike_need' type="text" value="{{user_bio.hike_need}}"><br>
+				<!-- <p>Profile pic: <input type="file" value="{{user_bio.profile_pic}}" name="profile_pic"><br> -->
+				<input type="submit" id="button" class="button" value="Update" name="reg_button"><br>
+			</form>
+		</div>	
+		<form action="/delete_photo/{{logged_User.id}}" method="POST">		
+			{% csrf_token %}
+			<label for="delete_photo">Delete Photo</label>
+			<input type="submit" class="button" value="DELETE" name="profile_pic"><br>
+		</form>
+		
+		<a href="/user_profile/{{logged_User.id}}">View Your Profile</a><br>	
+	</div>
+</body>
+</html>

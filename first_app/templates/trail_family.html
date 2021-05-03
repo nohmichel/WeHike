@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Find a Trail Family</title>
+	{% load static %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="{% static 'css/trailfam.css' %}">
+</head>
+	{% block header %}
+			{% include "header.html" %}
+	{% endblock %}
+<body>
+	<div id="container">	
+		<div id="head">
+			<h1>Find a Trail Family</h1>
+			<p id="subhead">Find a local hiking group or organization near you.</p>
+		</div>
+		<form action="/fam_results" method="POST">
+			 {% csrf_token %}
+		<div id="button">
+			<p>Nearest Location:
+			<select id="state" name="states">
+				<option value="California">California</option>
+				<option value="Oregon">Oregon</option> 
+				<option value="US">US</option> 
+			</select>
+			<input type="submit" value="submit"></p>
+		</div>	
+		<div id="groups">
+			{% if trail_family %}	
+				{% for one_fam in trail_family %}
+				<div id="trailfam" class="group_name">
+					<p class="title">{{one_fam.name}}</p>
+					{{one_fam.location}}, {{one_fam.state}}<br>
+					{{one_fam.website}}<br>
+				</div><br>
+				{% endfor %}
+			{% endif %}
+		</div>
+	</div>
+	<!-- <div id="hikers">
+		<img src="{% static '/images/trailfamily.jpg' %}" alt="Hikers walking across a trail." style="width: 500px;height: 500px;">
+	</div>			 -->		
+</body>
+</html>

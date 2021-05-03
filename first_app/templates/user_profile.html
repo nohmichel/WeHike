@@ -1,0 +1,34 @@
+	{% block header %}
+		{% include "header.html" %}
+		{% endblock %}
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/user_profile.css' %}">
+		<div id="container">
+			<div id="profile" class="profile_details">
+				<h1> About Me</h1>
+				<img class="profile-pic" src="{{user_bio.profile_pic.url}}" style="width: 400px;height: 400px;">
+				
+					{% if logged_User.username == one_user.username %}
+				<div id="edit">
+					<a href="/profile/{{logged_User.id}}">Edit Profile</a>
+				</div>	
+					{% endif %}
+					
+				<p>{{one_user.first_name|title}} {{one_user.last_name|title}}</p>
+				<p>@{{one_user.username}}</p>
+				<p>{{user_bio.location}}</p>
+			</div>	
+			<div id="user_bio" class="profile_details">	
+				<p>Favorite hike:</p>
+				<p>{{user_bio.fav_hike}}</p>
+				<p>Bucketlist Adventure:
+				<p>{{user_bio.bucket_list}}</p>
+				<p>Go-To Trail Snack:</p>
+				<p>{{user_bio.snack}}</p>
+				<p>Cannot Hike Without:</p>
+				<p>{{user_bio.hike_need}}</p>
+			</div>
+
+		</div>		
+	</body>
+</html>

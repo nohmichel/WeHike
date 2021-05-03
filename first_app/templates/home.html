@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Welcome to WeHike!</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/home.css' %}">
+	</head>
+		
+		<div id="top">
+			<img src="{% static '/images/landscape8.jpg' %}" alt="Green meadow." style="width:100%;">
+			<div id="title" class="centered">WeHike</div>
+			<div id="desc" class="centered"> DIVERSIFYING OUTDOOR RECREATION THROUGH COMMUNITY AND EDUCATION</div>
+		</div>
+		<div id="options_menu">	
+			<div id="container">			
+				<div class="category">
+				<a href="/register">
+					<div id="curve" class="menu">Join the Community</div>
+					<img src="{% static '/images/blooms.jpg' %}" alt="Green meadow." style="width: 300px;height: 300px;"></a>
+				</div>
+
+				<div class="category">
+					<a href="/quiz">
+					<div id="quiz" class="menu">Test Your Knowledge</div>
+					<img src="{% static '/images/fire.jpg' %}" alt="Camp fire." style="width: 300px;height: 300px;"></a>
+					
+				</div>
+
+				<div class="category">
+					<a href="/trail_family">
+					<div id="fam" class="menu">Find A Trail Family</div>
+					<img src="{% static '/images/group1.jpg' %}" alt="Hiker extending arm to help another hiker up." style="width: 300px;height: 300px;"></a>			
+				</div>
+
+				<div class="category">
+					{% if request.session.User %}
+					<a href="/user_profile/{{logged_User.id}}">
+					<div id="fam" class="menu">View Your Profile</div>
+					<img src="{% static '/images/solo.jfif' %}" alt="Hiker looking up at a mountain." style="width: 300px;height: 300px;"></a>
+						{% else %}
+					<a href="/register">
+					<div id="fam" class="menu">View Your Profile</div>
+					<img src="{% static '/images/solo.jfif' %}" alt="Hiker looking up at a mountain." style="width: 300px;height: 300px;"></a>
+					{% endif %}
+				</div>
+				<br>
+				{% if request.session.User %}
+				<a href="/logout">Logout</a>	
+					{% else %}	
+				<div id="logout" class="header">
+					<a href="/register">Register/Login</a>
+				</div>
+					{% endif %}
+			</div>
+		</div>
+	</body>
+</html>

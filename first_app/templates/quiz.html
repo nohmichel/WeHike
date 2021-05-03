@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>WeHike - Test Your Knowledge</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="{% static 'javascript/wehike.js' %}"></script>
+
+	</head>
+		<div id="top">
+			{% block header %}
+				{% include "header.html" %}
+			{% endblock %}
+		</div>	
+		<p id="title">Wilderness Quiz - Test your knowledge!</p>
+		<div id="border">
+			<div id="response">							
+		</div>
+			<div id="container">
+				<div id="quiz">
+					<p>1. Leave No Trace (hint: There are three correct answers
+					)</p>
+						<div>
+							<input type="radio" id="firsta" name="Q1" value="trace_a" >
+							<label for="trace_a">Is a comprehensive attitude toward using the backcountry that shows our esponsibility and respect for wildlife, other visitors, and everything beneath our feet.</label>
+						</div>
+						<div>
+							<input type="radio" id="firstb" name="Q1" value="trace_b">
+							<label for="trace_b">Applies to both camping AND traveling.</label>
+										
+						<div>
+							<input type="radio" id="firstc" name="Q1" value="trace_c">
+							<label for="trace_c">Means thinking just as much about how your camp will look AFTER YOU LEAVE as how it looks while using it.</label>
+						</div>
+
+
+						<div>
+							<input type="radio" id="firstd" name="Q1" value="trace_d">
+							<label for="trace_d">Only applies to Wilderness Areas.</label>
+						</div><br>
+
+					<p>2. Which of the following transportation methods are allowed in the wilderness? (hint: There are three correct answers)</p>
+						<div>
+							<input type="radio" id="seconda" name="Q2" value="trans_a">
+							<label for="trans_a">Jeep</label>
+						</div>
+						<div>
+							<input type="radio" id="secondb" name="Q2" value="trans_b">
+							<label for="trans_b">Foot</label>
+						</div>
+						<div>
+							<input type="radio" id="secondc" name="Q2" value="trans_c">
+							<label for="trans_c">Raft</label>
+						</div>
+						<div>
+							<input type="radio" id="secondd" name="Q2" value="trans_d">
+							<label for="trans_d">Horseback</label>
+						</div><br>
+							
+					<p>3. What souvenirs can you take from the back country and wilderness? (hint: There are three correct answers)</p>
+						<div>
+							<input type="radio" id="thirda" name="Q3" value="souv_a">
+							<label for="souv_a">Photographs.</label>
+						</div>
+						<div>
+							<input type="radio" id="thirdb" name="Q3" value="souv_b">
+							<label for="souv_b">Arrowheads.</label>
+						</div>
+						<div>
+							<input type="radio" id="thirdc" name="Q3" value="souv_c">
+							<label for="souv_c">Garbage left by slobs.</label>
+						</div>
+						<div>
+							<input type="radio" id="thirdd" name="Q3" value="souv_d">
+							<label for="souv_d">A case of poison ivy.</label>
+						</div><br>	
+					
+					<p>4. What is the best method for disposing of human waste?</p>			
+						<div>
+							<input type="radio" id="fourtha" name="Q4" value="waste_a">
+							<label for="waste_a">Pick a place at least 200 feet from water sources and bury human waste - along with toilet paper - six to eight inches deep.</label>
+						</div>
+						<div>
+							<input type="radio" id="fourthb" name="Q4" value="waste_b">
+							<label for="waste_b">Don't go! Force yourself to wait until your wilderness visit is over.</label>
+						</div>
+						<div>
+							<input type="radio" id="fourthc" name="Q4" value="waste_c">
+							<label for="waste_c">Pick a place below the high water mark of a stream where flood waters will wash waste away.</label>
+						</div>
+						<div>
+							<input type="radio" id="fourthd" name="Q4" value="waste_d">
+							<label for="waste_d">Be natural. Go when and where you've got to so, long as you are off the trail.</label>
+						</div><br>
+
+					<p>5. When traveling through the backcountry you should? (hint: There are two correct answers)</p>
+						<div>
+							<input type="radio" id="fiftha" name="Q5" value="back_a">
+							<label for="back_a">Stay on trails as much as possible.</label>
+						</div>
+						<div>
+							<input type="radio" id="fifthb" name="Q5" value="back_b">
+							<label for="back_b">Walk single file on trails, but spread out when hiking cross-country.</label>
+						</div>
+						<div>
+							<input type="radio" id="fifthc" name="Q5" value="back_c">
+							<label for="back_c">Take rest breaks next to the trail to minimize disturbance away from the trail.</label>
+						</div>
+						<div>
+							<input type="radio" id="fifthd" name="Q5" value="back_d">
+							<label for="back_d">Avoid wet areas on the trail to keep your boots dry.</label>
+						</div><br>
+
+					<p>6. How long does a cigarette filter take to decompose?</p>
+						<div>
+							<input type="radio" id="sixtha" name="Q6" value="back_a">
+							<label for="back_a">Stay on trails as much as possible.</label>
+						</div>
+						<div>
+							<input type="radio" id="sixthb" name="Q6" value="back_b">
+							<label for="back_b">Walk single file on trails, but spread out when hiking cross-country.</label>
+						</div>
+						<div>
+							<input type="radio" id="sixthc" name="Q6" value="back_c">
+							<label for="back_c">Take rest breaks next to the trail to minimize disturbance away from the trail.</label>
+						</div>
+						<div>
+							<input type="radio" id="sixthd" name="Q6" value="back_d">
+							<label for="back_d">Avoid wet areas on the trail to keep your boots dry.</label>
+						</div><br>
+					
+					<p>7. Which of the following may be left in the back country and wilderness?</p>
+						<div>
+							<input type="radio" id="sevena" name="Q7" value="wild_a">
+							<label for="wild_a">Stay on trails as much as possible.</label>
+						</div>
+						<div>
+							<input type="radio" id="sevenb" name="Q7" value="wild_b">
+							<label for="wild_b">Walk single file on trails, but spread out when hiking cross-country.</label>
+						</div>
+						<div>
+							<input type="radio" id="sevenc" name="Q7" value="wild_c">
+							<label for="wild_c">Take rest breaks next to the trail to minimize disturbance away from the trail.</label>
+						</div>
+						<div>
+							<input type="radio" id="sevend" name="Q7" value="wild_d">
+							<label for="wild_d">Avoid wet areas on the trail to keep your boots dry.</label>
+						</div><br>
+					
+					<p>8. What is the best way to minimize the impacts of fire?</p>
+						<div>
+							<input type="radio" id="eightha" name="Q8" value="fire_a">
+							<label for="fire_a">Stay on trails as much as possible.</label>
+						</div>
+						<div>
+							<input type="radio" id="eighthb" name="Q8" value="fire_b">
+							<label for="fire_b">Walk single file on trails, but spread out when hiking cross-country.</label>
+						</div>
+						<div>
+							<input type="radio" id="eighthc" name="Q8" value="fire_c">
+							<label for="fire_c">Use a fire pan, existing fire ring, or mound fire.</label>
+						</div>
+						<div>
+							<input type="radio" id="eighthd" name="Q8" value="fire_d">
+							<label for="fire_d">Avoid wet areas on the trail to keep your boots dry.</label>
+						</div><br>
+				</div><br>
+			<h1>Great job, share this quiz with family and friends!</h1>
+		</div>
+	</body>
+</html>

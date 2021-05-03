@@ -1,0 +1,21 @@
+img {
+	border-radius: 50%;
+}
+#container{
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	border:1px solid black;
+	padding: 15px;
+	text-align: center;
+}
+
+.profile_details {
+/*display: inline-block;*/
+margin-right: 20px; 
+}
+
+#edit a{
+	color: black;
+}
+

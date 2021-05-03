@@ -1,0 +1,27 @@
+<label for='location'>Location:</label>
+		<input name="location" type="text"><br>
+		{{user_bio.location}}<br>
+		{% endif %}
+		<label for='fav_hike'>Favorite Hike:</label>
+		<input name="fav_hike" type="text"><br>
+		{{user_bio.fav_hike}}<br>
+		<label for='bucket_list'>Bucket List Adventure</label>
+		<input name="bucket_list" type="text"><br>
+		{{user_bio.bucket_list}}<br>
+		<label for='snack'>Go-To Trail Snack:</label> 
+		<input name="snack" type="text"><br>
+		{{user_bio.snack}}<br>
+		<label for='hike_need'>Cannot Hike Without:</label> 
+		<input name='hike_need' type="text"><br>
+		{{user_bio.hike_need}}<br>
+		<input type="submit" id="button" value="Edit" name="reg_button"><br>
+		</form>	
+</body>
+</html>
+
+
+<!-- {% if not user_bio.location %} -->
+		<label for='location'>Location:</label>
+		<input name="location" type="text" value="{{user_bio.location}}"><br>
+		<!-- {% endif %}
+		{{user_bio.location}}<br> -->
